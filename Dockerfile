@@ -5,7 +5,7 @@ RUN apt-get update \
     && rm /etc/ssh/*key /etc/ssh/*key.pub \
     && chmod +x /cmd.sh \
     && groupadd ubuntu \
-    && useradd -mg ubuntu ubuntu \
+    && useradd -mg ubuntu -s /bin/bash ubuntu \
     && install -o ubuntu -g ubuntu -m 0700 -d /home/ubuntu/.ssh
 
 EXPOSE 22
